@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento</title>
+    <style>
+        body {
+            background-color: #c4aecb;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 90%;
+            max-width: 500px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label, select, input[type="text"] {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        p {
+            margin-top: 15px;
+            color: #68428b;
+        }
+
+        input[type="checkbox"] {
+            margin-top: 10px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #80368a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ac66db;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Agendamento</h1>
+        <form>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
+
+            <label for="semana">Selecione o dia da semana:</label>
+            <select id="semana" name="semana">
+                <option value="segunda">Segunda-feira</option>
+                <option value="terça">Terça-feira</option>
+                <option value="quarta">Quarta-feira</option>
+                <option value="quinta">Quinta-feira</option>
+                <option value="sexta">Sexta-feira</option>
+                <option value="sábado">Sábado</option>
+                <option value="domingo">Domingo</option>
+            </select>
+
+            <label for="hora">Selecione o horário:</label>
+            <select id="hora" name="hora">
+                <option value="7:00">7:00</option>
+                <option value="8:00">8:00</option>
+                <option value="10:30">10:30</option>
+                <option value="13:30">13:30</option>
+                <option value="15:00">15:00</option>
+                <option value="17:20">17:20</option>
+                <option value="18:40">18:40</option>
+                <option value="19:35">19:35</option>
+                <option value="20:30">20:30</option>
+            </select>
+
+            <p>Termos e Condições:</p>
+            <p>Ao agendar, você concorda com nossos termos: cancelamentos devem ser avisados com pelo menos 24h de antecedência. Atrasos acima de 10 minutos podem resultar em reagendamento. Para dúvidas ou alterações, entre em contato pelo WhatsApp (84) 99664-1253.</p>
+            
+            <input type="checkbox" id="termo" name="termo" required>
+            <label for="termo">Declaro que li e concordo</label>
+
+            <button type="button" onclick="proximaPagina()">Enviar</button>
+        </form>
+    </div>
+
+    <script>
+        function proximaPagina() {
+            window.location.href = "pagina5.html";
+        }
+    </script>
+</body>
+</html>
