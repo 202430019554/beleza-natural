@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento Concluído</title>
+    <style>
+        body {
+            background-color: #c4aecb;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            margin-top: 10px;
+            color: #68428b;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Agendamento Concluído!</h1>
+        <p>Obrigada pela preferência. Volte sempre!</p>
+        <p>Para fazer um novo agendamento, clique abaixo:</p>
+        <button onclick="voltarInicio()">Voltar para o Início</button>
+    </div>
+
+    <script>
+        function voltarInicio() {
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
