@@ -89,49 +89,60 @@
 </head>
 <body>
     <div class="container">
-        <h1>Carrinho de Compras</h1>
+        
+    <h1>Carrinho</h1>
+    <div class="product">
+        <h2>Cauterização</h2>
+        <p>Preço: R$ 50,00</p>
+        <button onclick="addToCart('Cauterização', 50)">Adicionar ao Carrinho</button>
+    </div>
 
-        <div class="product">
-            <h2>Cauterização</h2>
-            <p>Preço: R$ 50,00</p>
-            <button onclick="addToCart('Cauterização', 50)">Adicionar ao Carrinho</button>
-        </div>
-        <div class="product">
-            <h2>Design de sobrancelha</h2>
-            <p>Preço: R$ 30,00</p>
-            <button onclick="addToCart('Design de sobrancelha', 30)">Adicionar ao Carrinho</button>
-        </div>
-        <div class="product">
-            <h2>Pé e mão</h2>
-            <p>Preço: R$ 50,00</p>
-            <button onclick="addToCart('Pé e mão', 50)">Adicionar ao Carrinho</button>
-        </div>
-        <div class="product">
-            <h2>Depilação</h2>
-            <p>Preço: R$ 65,00</p>
-            <button onclick="addToCart('Depilação', 65)">Adicionar ao Carrinho</button>
-        </div>
+     <div class="product">
+        <h2>Design de sombrancelha</h2>
+        <p>Preço: R$ 30,00</p>
+        <button onclick="addToCart('Design de sombrancelha', 30)">Adicionar ao Carrinho</button>
+    </div>
 
-        <div id="cart">
-            <h2>Itens no Carrinho</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Produto</th>
-                        <th>Preço (R$)</th>
-                    </tr>
-                </thead>
-                <tbody id="cart-items"></tbody>
-                <tfoot>
-                    <tr>
-                        <th>Total</th>
-                        <th id="total">0.00</th>
-                    </tr>
-                </tfoot>
-            </table>
-        </div>
+     <div class="product">
+        <h2>pé e mão</h2>
+        <p>Preço: R$ 50,00</p>
+        <button onclick="addToCart('pé e mão', 50)">Adicionar ao Carrinho</button>
+     </div>
+ 
+     <div class="product">
+        <h2>Depilação</h2>
+        <p>Preço: R$ 65,00</p>
+        <button onclick="addToCart('Depilação', 65)">Adicionar ao Carrinho</button>
+    </div>
 
-        <button class="enviar" onclick="proximaPagina()">Ir para Agendamento</button>
+     <div class="product">
+        <h2>escova e prancha</h2>
+        <p>Preço: R$ 50,00</p>
+        <button onclick="addToCart('escova e prancha', 50)">Adicionar ao Carrinho</button>
+    
+
+     <div id="cart">
+        <h2>Carrinho de Compras</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Preço (R$)</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Total</th>
+                    <th id="total">0.00</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <div class="conteiner">
+        <button class="logout-button" onclick="voltar ()"> Enviar</button>
     </div>
 
     <script>
@@ -143,22 +154,27 @@
             total += price;
             updateCart();
         }
-
-        function updateCart() {
+          function updateCart() {
             const cartItems = document.getElementById('cart-items');
             const totalElement = document.getElementById('total');
             cartItems.innerHTML = '';
             cart.forEach(item => {
                 const row = document.createElement('tr');
-                row.innerHTML = <td>${item.product}</td><td>${item.price.toFixed(2)}</td>;
+                const productCell = document.createElement('td');
+                const priceCell = document.createElement('td');
+                productCell.textContent = item.product;
+                priceCell.textContent = item.price.toFixed(2);
+                row.appendChild(productCell);
+                row.appendChild(priceCell);
                 cartItems.appendChild(row);
             });
             totalElement.textContent = total.toFixed(2);
         }
-
-        function proximaPagina() {
-            window.location.href = "pagina4.html";
+        function voltar() {
+            window.location.href="pagina4.html";
         }
+
     </script>
+
 </body>
 </html>
